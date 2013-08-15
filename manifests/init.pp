@@ -16,6 +16,7 @@ class mariadb (
   $package_ensure = 'present'
 ) inherits mariadb::params {
 
+  class { 'mariadb::repository': }
   package { $package_names:
     ensure => $package_ensure,
   }
